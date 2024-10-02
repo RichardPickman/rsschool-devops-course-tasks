@@ -22,11 +22,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure AWS Credentials
+      - name: Configure AWS Credentials for China region audience
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::905418082172:role/rs-school-dev-ops-github-action-role-set-by-terraform
+          audience: sts.amazonaws.com.cn
           aws-region: eu-west-2
+          role-to-assume: arn:aws:iam::905418082172:role/rs-school-dev-ops-github-action-role-set-by-terraform
 
       # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
       - name: Terraform Init
