@@ -1,7 +1,16 @@
 terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
+    }
+  }
+
+
   backend "s3" {
-    bucket = "mybucket"
-    key    = "path/to/my/key"
-    region = "us-east-1"
+    bucket = var.bucket_name
+    region  = var.region
+    key = "terraform/terraform.tfstate"
+    encrypt = true
   }
 }
