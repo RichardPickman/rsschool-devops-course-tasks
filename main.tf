@@ -8,8 +8,8 @@ terraform {
 
 
   backend "s3" {
-    bucket  = var.bucket_name
-    region  = var.region
+    bucket  = "rs-school-dev-ops-terraform-bucket"
+    region  = "eu-west-2"
     key     = "terraform/terraform.tfstate"
     encrypt = true
   }
