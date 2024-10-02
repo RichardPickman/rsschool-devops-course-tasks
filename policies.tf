@@ -27,7 +27,10 @@ data "aws_iam_policy_document" "github_assume_role_policy" {
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:richardpickman/rsschool-devops-course-tasks:ref:refs/heads/main"]
+      values   = [
+        "repo:richardpickman/rsschool-devops-course-tasks:ref:refs/heads/main",
+        "repo:richardpickman/rsschool-devops-course-tasks:pull_request",
+      ]
 
     }
   }
