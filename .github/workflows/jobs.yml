@@ -26,6 +26,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
+          audience: sts.amazonaws.com.cn
           aws-region: eu-west-2
           role-to-assume: arn:aws:iam::905418082172:role/rs-school-dev-ops-github-action-role-set-by-terraform
 
