@@ -38,6 +38,5 @@ data "aws_iam_policy_document" "github_assume_role_policy" {
         "repo:RichardPickman/rsschool-devops-course-tasks:*"
       ]
     }
-
   }
 }
