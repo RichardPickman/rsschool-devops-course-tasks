@@ -20,12 +20,12 @@ data "aws_iam_policy_document" "github_assume_role_policy" {
       identifiers = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:oidc-provider/token.actions.githubusercontent.com"]
     }
     condition {
-      test     = "StringEquals"
+      test     = "ForAllValues:StringEquals"
       variable = "token.actions.githubusercontent.com:aud"
       values   = ["sts.amazonaws.com"]
     }
     condition {
-      test     = "StringEquals"
+      test     = "ForAllValues:StringEquals"
       variable = "token.actions.githubusercontent.com:iss"
       values = [
         "https://token.actions.githubusercontent.com"
